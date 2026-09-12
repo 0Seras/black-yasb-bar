@@ -298,7 +298,7 @@
     font-family: "JetBrainsMono NerdFont";
     padding-bottom: 1px;
 }
-.weather-wiget,
+.weather-widget,
 .weather-widget .label,
 .weather-widget .icon {
     color: var(--text) !important;
