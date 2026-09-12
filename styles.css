@@ -311,6 +311,8 @@
     font-size: 11px;
     padding: 0 2px;
     margin: 0 1px;
+    height: 10px;
+    width: 10px;
 }
 .wifi-widget,
 .wifi-widget .label,
@@ -319,6 +321,8 @@
     font-size: 11px;
     padding: 0 0px;
     margin: 0 0px;
+    height: 10px;
+    width: 10px;
 }
 .clock-widget,
 .clock-widget .label,
@@ -327,4 +331,16 @@
     font-size: 11px;
     padding: 0 1px;
     margin: 0 1px;
+    height: 10px;
+    width: 10px;
+}
+.volume-widget,
+.volume-widget .label,
+.volume-widget .icon {
+    color: var(--text) !important;
+    font-size: 11px;
+    padding: 0 1px;
+    margin: 0 1px;
+    height: 10px;
+    width: 10px;
 }
