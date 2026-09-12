@@ -31,14 +31,14 @@ bars:
       bottom: 0
       right: 0
     widgets:
-      left: ["komorebi_workspaces", "quick_launch"]
-      center: ["media"]
-      right: ["wallpapers", "volume", "weather", "clock"]
+      left: ["clock", "komorebi_workspaces", "quick_launch"]
+      center: ["media", "cava"]
+      right: ["wifi", "wallpapers", "weather", "volume"]
 widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "time {%Y-%m-%d %H:%M:%S}"
+      label: "{%H:%M:%S}  |"
       timezones: []
       callbacks:
         on_left: "do_nothing"
@@ -46,7 +46,7 @@ widgets:
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      label_offline: " 天 offline"
+      label_offline: "天 offline"
       label_workspace_btn: "{index}"
       label_workspace_active_btn: "{index}"
       label_workspace_populated_btn: "{index}"
@@ -73,7 +73,7 @@ widgets:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "<span> \uf4e5 </span>"
-      image_path: 'Add path like right #path' # D:\\Customize\\Image\\Wallpapers
+      image_path: "put path here" #C:\\RANDOM\\SLOP\\Wallpapers
       change_automatically: false 
       update_interval: 60 
       engine:
@@ -100,20 +100,20 @@ widgets:
       api_key: 'f59a8bfa9e6f411e9bf150801260307'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
-      location: "Your location" #Los Angeles, CA, USA
+      location: "Put your location here" #Los Angeles, CA, USA
       callbacks:
         on_left: "toggle_label"
       icons:
-        sunnyDay: "\udb81\udd99"
-        clearNight: "\udb81\udd99"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\udb81\udd99"
-        rainyDay: "\udb81\udd99"
-        rainyNight: "\udb81\udd99"
-        snowyDay: "\udb81\udd99"
-        snowyNight: "\udb81\udd99"
-        blizzardDay: "\udb81\udd99"
-        default: "\udb81\udd99"
+        sunnyDay: "\udb81\udd9a"
+        clearNight: "\udb81\udd94"
+        cloudyDay: "\udb81\udd90"
+        cloudyNight: "\udb81\udd90"
+        rainyDay: "\udb81\udd96"
+        rainyNight: "\udb81\udd96"
+        snowyDay: "\udb81\udd98"
+        snowyNight: "\udb81\udd98"
+        blizzardDay: "\udb83\udf36"
+        default: "\udb81\udd90"
   quick_launch:
     type: "yasb.quick_launch.QuickLaunchWidget"
     options:
@@ -121,7 +121,7 @@ widgets:
       search_placeholder: "Search applications..."
       max_results: 30
       show_icons: true
-      icon_size: 1
+      icon_size: 20
       popup:
         width: 650
         height: 400
@@ -136,3 +136,31 @@ widgets:
         - keys: "alt+space"
           action: "toggle_quick_launch"
           screen: "primary"
+  wifi:
+    type: yasb.wifi.WifiWidget
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "<span>{wifi_icon}</span>{wifi_name}"
+      update_interval: 1000
+      wifi_icons:
+        - ""
+        - ""
+        - ""
+        - ""
+        - ""
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 6
+      min_bar_height: 0
+      gradient: 1
+      foreground: "#000000"
+      gradient_color_1: '#ffffff'
+      gradient_color_2: '#ffffff'
+      gradient_color_3: '#ffffff'
+      bars_number: 6
+      bar_spacing: 1
+      bar_width: 3
+      bar_type: "bars"
+      framerate: 60
+      hide_empty: true
