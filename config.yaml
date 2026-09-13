@@ -1,6 +1,6 @@
 watch_stylesheet: true
 watch_config: true
-debug: false
+debug: true
 komorebi:
   start_command: "komorebic start --whkd"
   stop_command: "komorebic stop"
@@ -59,17 +59,44 @@ widgets:
         on_right: "toggle_mute"
         on_left: "do_nothing"
   media:
-    type: "yasb.media.MediaWidget"
+    type: yasb.media.MediaWidget
     options:
-      label: "{artist} \uf001 {title}"
+      label: '{title}{s}{artist}'
+      label_alt: '{title}'
+      separator: ' - '
       hide_empty: true
-      max_field_size:
-        label: 136
-      show_thumbnail: false
-      controls_hide: true
       callbacks:
-        on_left: "do_nothing"
-   wallpapers:
+        on_left: toggle_media_menu
+        on_middle: do_nothing
+        on_right: do_nothing
+      max_field_size:
+        label: 45
+        label_alt: 45
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      controls_hide: true
+      thumbnail_alpha: 100
+      thumbnail_padding: 10
+      thumbnail_edge_fade: true
+      icons:
+        prev_track: "\uE892"
+        next_track: "\uE893"
+        play: "\uE768"
+        pause: "\uE769"
+      media_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        alignment: center
+        direction: down
+        thumbnail_corner_radius: 20
+        thumbnail_size: 100
+        max_title_size: 100
+        max_artist_size: 80
+        show_volume_slider: false
+  wallpapers:
     type: yasb.wallpapers.WallpapersWidget
     options:
       label: "<span> \uf4e5 </span>"
@@ -102,7 +129,7 @@ widgets:
       api_key: 'f59a8bfa9e6f411e9bf150801260307'
       update_interval: 600 #Update interval in seconds, Min 600
       hide_decimal: true
-      location: "Put your location here" #Los Angeles, CA, USA
+      location: "Pacifica, ARG" #Los Angeles, CA, USA
       callbacks:
         on_left: "toggle_label"
       icons:
