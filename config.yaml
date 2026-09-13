@@ -69,29 +69,31 @@ widgets:
       controls_hide: true
       callbacks:
         on_left: "do_nothing"
-  wallpapers:
-    type: "yasb.wallpapers.WallpapersWidget"
+   wallpapers:
+    type: yasb.wallpapers.WallpapersWidget
     options:
       label: "<span> \uf4e5 </span>"
-      image_path: "put path here" #C:\\RANDOM\\SLOP\\Wallpapers
-      change_automatically: false 
-      update_interval: 60 
+      tooltip: true
+      image_path: "C:\\Users\\DELL\\.config\\Wallpapers"
+      change_automatically: false
       engine:
         enabled: true
-        animation: "slide_top" # circle/slide_top/diamond/split
+        animation: circle
       gallery:
-        enabled: true 
+        enabled: true
         blur: true
-        image_width: 250
-        image_per_page: 5
+        image_width: 200
+        image_per_page: 7
+        gallery_columns: 0 
+        horizontal_position: center
+        vertical_position: center
+        respect_work_area: true
         show_buttons: false
-        orientation: "landscape"
-        image_spacing: 20
+        orientation: portrait
+        image_spacing: 6
         lazy_load: true
-        lazy_load_delay: 80
         lazy_load_fadein: 300
-        image_corner_radius: 2
-        enable_cache: false
+        image_corner_radius: 5
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
