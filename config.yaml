@@ -107,20 +107,19 @@ widgets:
         enabled: true
         animation: circle
       gallery:
-        enabled: true
-        blur: true
-        image_width: 200
-        image_per_page: 7
-        gallery_columns: 0 
-        horizontal_position: center
-        vertical_position: center
-        respect_work_area: true
-        show_buttons: false
-        orientation: portrait
-        image_spacing: 6
-        lazy_load: true
-        lazy_load_fadein: 300
-        image_corner_radius: 5
+        image_width: 330
+        image_corner_radius: 6
+        type: "magnified" #default/magnified/strip/slide
+        orientation: "landscape" #landscape/portrait
+        accent_color: "#ffffff" #u chan change to any color u like
+      callbacks:
+        on_left: "toggle_gallery"
+        on_middle: "do_nothing"
+        on_right: "change_wallpaper"
+      keybindings:
+        - keys: "ctrl+alt+w"
+          action: "toggle_gallery"
+          screen: "primary" #active/cursor/primary
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
